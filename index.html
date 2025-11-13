@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Wedding</title>
+  <link href="https://fonts.googleapis.com/css?family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Aleo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <header class="hero">
+    <h1 class="hero-title" style="display: none;">Daina <br> &amp; <br> Bradley</h1>
+    <p class="hero-date" style="display: none;">21st February 2026</p>
+    <img src="images/header.png" width="100%">
+  </header>
+
+  <main>
+    <img src="images/Rectangle2.jpg" width="100%">
+
+    <section class="story-section">
+      <h1><img src="images/SGroup.svg"> Our Story <img src="images/SGroupRight.svg"></h1>
+      <p>
+        Daina and Bradley met in November of 2022, and started dating in February 2023. Both being designers, they
+        instantly had effortless conversations with each other, spending their 1st date talking so much that they walked
+        from Olympic Park to Rhodes without any awkward silence.
+      </p>
+      <p>
+        They have kept that spark allive in their relationship since then, going on adventures together and looking
+        after each other when the other needed it.
+      </p>
+      <p>
+        Brad had to spin quite the story to get Daina back to Sydney Olympic Park without fully realising what was
+        happening. They were “going for afternoon tea in a park in Concord West”. And on the 30th of August, Bradley
+        proposed and Daina said yes.
+      </p>
+    </section>
+
+    <img src="images/flowers1.svg" style="float: right; position: absolute; z-index: -1; right: 0px; height: 600px; margin-top: 200px;">
+    <img src="images/flowers2.svg" style="float: left; position: absolute; z-index: -1; left: 0px; height: 600px;">
+    
+    <section class="details-section">
+      <div class="invite">
+        <br>
+
+        <h1>Schedule</h1>
+      
+        <div id="closeFam" style="display: none;">
+          <h3>Chinese Tea Ceremony</h3>
+          <p>8:00 AM - 9:00 AM</p>
+          <p>Place Name</p>
+          <p>address</p>
+        </div>
+      
+        <h3>Church Ceremony</h3>
+        <p>10:30 AM - 12:00 PM</p>
+        <p>Wahroonga Anglican Church - Water Street</p>
+        <p>2 Water St, Wahroonga NSW 2076</p>
+      
+        <div id="receptionInvite" style="display: none;">
+          <h3>Reception</h3>
+          <p>5:30 PM - 10:30 PM</p>
+          <p>Angelo's Cabarita</p>
+          <p>Prince Edward Park, Phillips St, Cabarita NSW 2137</p>
+        </div>
+
+        <br><br><br><br>
+
+        <button id="closeFamButton" style="display: none;" onclick="window.location.href='rsvp.html?closeFam';">
+          RSVP
+        </button>
+
+        <button id="genericInviteButton" onclick="window.location.href='rsvp.html';">
+          RSVP
+        </button>
+
+        <button id="receptionInviteButton" style="display: none;" onclick="window.location.href='rsvp.html?reception';">
+          RSVP
+        </button>
+
+        <br><br><br>
+        
+        <br><br><br>
+      </div>
+    </section>
+
+    <section class="gifts">
+      <h1><img src="images/ONCGroup.svg"> Our Next Chapter <img src="images/ONCGroup.svg"></h1>
+
+      <p>Your presence is truly the best present! <br>Should you wish to give, we have set up a registry and home fund below. <br>Thank you for helping us start our next chapter.</p>
+      <a href="https://google.com" target="_blank">Give with Love</a>
+    </section>
+
+    <div class="countdown-section">
+      <div class="countdown">
+        <div><span id="days">117</span><p>Days</p></div>
+        <div><span id="hours">23</span><p>Hours</p></div>
+        <div><span id="minutes">34</span><p>Minutes</p></div>
+        <div><span id="seconds">29</span><p>Seconds</p></div>
+      </div>
+    </div>
+  </main>
+  <script>
+
+    // Timer for date countdown
+
+    const deadline = new Date('February 21, 2026 10:30:00 GMT+11').getTime();
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = deadline - now;
+
+      if (distance < 0) {
+        // If deadline has passed, display 0s
+        daysElement.textContent = '0';
+        hoursElement.textContent = '0';
+        minutesElement.textContent = '0';
+        secondsElement.textContent = '0';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysElement.textContent = days.toString().padStart(2, '0');
+      hoursElement.textContent = hours.toString().padStart(2, '0');
+      minutesElement.textContent = minutes.toString().padStart(2, '0');
+      secondsElement.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+
+    const query = window.location.search;
+
+    if (query === "?closeFam") {
+      document.getElementById('closeFam').style.display = 'block';
+      document.getElementById('receptionInvite').style.display = 'block';
+
+      document.getElementById('closeFamButton').style.display = 'block';
+      document.getElementById('genericInviteButton').style.display = 'none';
+    }
+
+    if (query === "?reception") {
+      document.getElementById('receptionInvite').style.display = 'block';
+
+      document.getElementById('receptionInviteButton').style.display = 'block';
+      document.getElementById('genericInvite').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>

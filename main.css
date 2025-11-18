@@ -30,7 +30,7 @@ p {
 section {
   max-width: 1000px;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 260px;
 }
 
 .story-section {
@@ -92,6 +92,7 @@ button:hover {
 
 .gifts {
   color: #45556B;
+  margin-bottom: 120px;
 }
 
 a {
@@ -130,4 +131,11 @@ a {
   font-size: 48px;
   color: white;
   font-family: 'Alex Brush', serif;
+}
+
+.forms {
+  border: 3px solid #768F6E;
+  border-radius: 10px;
+  background-color: white;
+  color: #768F6E;
 }

@@ -21,18 +21,66 @@
     </div>
   </div>
 
-  <section>
+  <section class="rsvpSection">
     <div class="forms">
       <h1>RSVP</h1>
       <form action="https://formspree.io/f/mkgkrjwn" method="POST">
-        <label>Your email:<input type="email" name="email"></label>
-        <label>Your message:<textarea name="message"></textarea></label>
-        <button type="submit">Send</button>
-      </form>
+        <div class="row">
+          <div class="column">
+            <label>Name</label> <br>
+            <input class="textBox" type="text" name="Name" style="width: 90%;">
+            <br><br>
+            <label>Attendance</label> <br>
+            <div id="closeFam" style="display: none;"><input type="checkbox" name="TeaAttendance"><label>Tea Ceremony</label> <br></div>
+            <input type="checkbox" name="CeremonyAttendance"><label>Ceremony</label> <br>
+            <div id="receptionInvite" style="display: none;"><input type="checkbox" name="ReceptionAttendance"><label>Reception</label> <br></div>
+            <br>
+            <label>Number of Guests (including you)</label> <br>
+            <input class="textBox" type="number" name="AttendanceNumber" style="width: 90%;">
+          </div>
+          <div class="column">
+            <label>Email</label> <br>
+            <input class="textBox" type="email" name="Email" style="width: 90%;">
+          </div>
+        </div>
 
+        <label>Dietary Requirements</label> <br>
+        <input class="textBox" type="text" name="DietaryRequirements">
+        <br>
+        <label>Transportation Needs</label> <br>
+        <input class="textBox" type="text" name="Transport">
+        <br>
+        <label>Notes</label> <br>
+        <textarea name="notes"></textarea>
+
+        <br><br><br><br>
+        
+        <button type="submit" style="border-color: lightgray;">Send</button>
+      </form>
     </div>
   </section>
 
+  <section class="story-section">
+    <h1> <img src="images/SGroup.svg"> Frequently Asked Questions <img src="images/SGroupRight.svg"> </h1>
+    <br>
+    <h2>When do we need to RSVP by?</h2>
+    <p>Please submit your RSVP before 10th January 2026.</p>
+    <br>
+    <h2>What is the wedding dress code?</h2>
+    <p>We would love for everyone to join us in cocktail attire. Please feel free to reference our website’s colours for outfit inspiration. We kindly ask guests to avoid wearing red on the day, as it is reserved for the bride and her family in Chinese culture.</p>
+    <br>
+    <h2>What to do if I need a lift?</h2>
+    <p>The wedding venue is walking distance from Wahroonga station. If you need help getting to the reception, please tell us your transportation needs in the RSVP form. We will reach out and arrange a shuttle for you on the day.</p>
+    <br>
+    <h2>Where can I park on the day?</h2>
+    <p>The Church has adequate street parking. For those attending the reception, please make sure to provide your email address in the for so we can keep you up to date.</p>
+    <br>
+    <h2>Are children invited to the wedding?</h2>
+    <p>Children are invited to the Ceremony. For the reception, we would prefer to keep it as an adult only event, but if this can't work for you, please reach out to Brad or Daina and we can make arrangements.</p>
+  </section>
+
+  <img src="images/bottomFlower.svg" style="margin: auto; margin-top: 150px;"
+  
   <main>
 
     

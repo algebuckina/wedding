@@ -133,9 +133,60 @@ a {
   font-family: 'Alex Brush', serif;
 }
 
+.rsvpSection {
+  margin-top: 50px;
+}
+
 .forms {
   border: 3px solid #768F6E;
   border-radius: 10px;
   background-color: white;
   color: #768F6E;
+   padding: 0px 50px 50px 50px;
+}
+
+form {
+  text-align: left;
+}
+
+.textBox, textarea {
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 10px;
+  color: lightgray;
+  margin: 5px;
+  width: 100%;
+  font-family: 'Alegreya', serif;
+}
+
+input:focus {
+  border: 2px solid gray;
+  border-radius: 5px;
+  color: gray;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+label {
+  font-size: 24px;
+  color: #45556B;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

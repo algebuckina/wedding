@@ -28,9 +28,11 @@ p {
 }
 
 section {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: auto;
   margin-top: 260px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .story-section {
@@ -142,7 +144,7 @@ a {
   border-radius: 10px;
   background-color: white;
   color: #768F6E;
-   padding: 0px 50px 50px 50px;
+  padding: 0px 50px 50px 50px;
 }
 
 form {
@@ -189,4 +191,22 @@ label {
   content: "";
   display: table;
   clear: both;
+}
+
+@media (max-width: 825px) {
+  .column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .titleDeco {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .countdownOthers {
+    display: none;
+  }
 }
